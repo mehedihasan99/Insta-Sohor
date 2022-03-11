@@ -21,6 +21,7 @@ const addToLiked = (id) => {
 };
 
 const reportPost = (id) => {
+  // console.log(id);
     reportedPostsId.push(id);
     const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
     showPosts(remainingPosts);
@@ -31,6 +32,7 @@ const displayContent = (text) => {
 };
 
 const switchTab = (id) => {
+  console.log(id);
     if (id === "posts") {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
@@ -51,6 +53,7 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
+  // console.log(post);
   // console.log(post.comments[0].text);
     const image = post.image;
     const userImage = post.userImage;
@@ -146,7 +149,7 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
-    likedPosts.innerHTML = "";
+    document.getElementById( "liked" ).innerHTML = "";
     likedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
@@ -155,6 +158,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
+    document.getElementById( "reported" ).innerHTML = "";
     reportedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
