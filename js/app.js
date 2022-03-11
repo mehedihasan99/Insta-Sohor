@@ -32,7 +32,7 @@ const displayContent = (text) => {
 };
 
 const switchTab = (id) => {
-  console.log(id);
+  // console.log(id);
     if (id === "posts") {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
